@@ -1,4 +1,4 @@
-namespace Portal.Comon.UnitTests;
+namespace Portal.Common.UnitTests;
 
 public class UnitTest1
 {
