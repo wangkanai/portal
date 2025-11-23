@@ -30,7 +30,7 @@
   <Folder Name="/Frontend/Federation/">
     <File Path="Frontend\Federation\Directory.Build.props" />
     <File Path="Frontend\Federation\README.md" />
-    <Project Path="Frontend/Federation/src/Applicatiom/Portal.Federation.Application.csproj" />
+    <Project Path="Frontend/Federation/src/Application/Portal.Federation.Application.csproj" />
     <Project Path="Frontend/Federation/src/Domain/Portal.Federation.Domain.csproj" />
   </Folder>
   <Folder Name="/Frontend/Federation/tests/">
