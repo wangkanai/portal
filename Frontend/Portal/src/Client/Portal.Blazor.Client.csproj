@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication"  />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Portal.Blazor.Application.csproj" />
+  </ItemGroup>
+
 </Project>
