@@ -13,5 +13,8 @@
     <Project Path="Aspire/src/ServiceDefaults/Portal.Aspire.ServiceDefaults.csproj" />
   </Folder>
   <Folder Name="/Backend/" />
+  <Folder Name="/Backend/Common/" />
   <Folder Name="/Frontend/" />
+  <Folder Name="/Frontend/Federation/" />
+  <Folder Name="/Frontend/Portal/" />
 </Solution>
