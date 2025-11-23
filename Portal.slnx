@@ -31,7 +31,9 @@
     <File Path="Frontend\Federation\Directory.Build.props" />
     <File Path="Frontend\Federation\README.md" />
   </Folder>
-  <Folder Name="/Frontend/Federation/tests/" />
+  <Folder Name="/Frontend/Federation/tests/">
+    <Project Path="Frontend/Federation/tests/Unit/Portal.Federation.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/Frontend/Portal/">
     <File Path="Frontend\Portal\Directory.Build.props" />
     <File Path="Frontend\Portal\README.md" />

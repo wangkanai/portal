@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Portal.Federation.UnitTests</RootNamespace>
+  </PropertyGroup>
+
+</Project>
+
+
+
