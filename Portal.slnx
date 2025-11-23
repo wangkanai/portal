@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/.solution/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Aspire/">
+    <Project Path="Aspire/src/AppHost/Portal.Aspire.AppHost.csproj" />
+    <Project Path="Aspire/src/ServiceDefaults/Portal.Aspire.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/Backend/" />
+  <Folder Name="/Backend/Common/" />
+  <Folder Name="/Frontend/">
+    <File Path="Frontend\Directory.Build.props" />
+    <File Path="Frontend\README.md" />
+  </Folder>
+  <Folder Name="/Frontend/Federation/">
+    <File Path="Frontend\Federation\Directory.Build.props" />
+    <File Path="Frontend\Federation\README.md" />
+  </Folder>
+  <Folder Name="/Frontend/Portal/">
+    <File Path="Frontend\Portal\Directory.Build.props" />
+    <File Path="Frontend\Portal\README.md" />
+    <Project Path="Frontend/Portal/src/Application/Portal.Blazor.Application.csproj" />
+    <Project Path="Frontend/Portal/src/Client/Portal.Blazor.Client.csproj" />
+    <Project Path="Frontend/Portal/src/Domain/Portal.Blazor.Domain.csproj" />
+    <Project Path="Frontend/Portal/src/Infrastructure/Portal.Blazor.Infrastructure.csproj" />
+    <Project Path="Frontend/Portal/src/Persistence/Portal.Blazor.Persistence.csproj" />
+    <Project Path="Frontend\Portal\src\Server\Portal.Blazor.Server.csproj" />
+  </Folder>
+</Solution>
