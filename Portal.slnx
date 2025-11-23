@@ -12,8 +12,17 @@
     <Project Path="Aspire/src/AppHost/Portal.Aspire.AppHost.csproj" />
     <Project Path="Aspire/src/ServiceDefaults/Portal.Aspire.ServiceDefaults.csproj" />
   </Folder>
-  <Folder Name="/Backend/" />
-  <Folder Name="/Backend/Common/" />
+  <Folder Name="/Backend/">
+    <File Path="Backend\Directory.Build.props" />
+    <File Path="Backend\README.md" />
+  </Folder>
+  <Folder Name="/Backend/Common/">
+    <Project Path="Backend/Common/src/Application/Portal.Common.Application.csproj" />
+    <Project Path="Backend/Common/src/Domain/Portal.Common.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Backend/Common/tests/">
+    <Project Path="Backend\Common\tests\Unit\Portal.Common.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/Frontend/">
     <File Path="Frontend\Directory.Build.props" />
     <File Path="Frontend\README.md" />
