@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/.solution/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Aspire/">
+    <Project Path="Aspire/src/AppHost/Portal.Aspire.AppHost.csproj" />
+    <Project Path="Aspire/src/ServiceDefaults/Portal.Aspire.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/Backend/" />
+  <Folder Name="/Frontend/" />
+</Solution>
