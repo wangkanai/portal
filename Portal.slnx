@@ -12,8 +12,17 @@
     <Project Path="Aspire/src/AppHost/Portal.Aspire.AppHost.csproj" />
     <Project Path="Aspire/src/ServiceDefaults/Portal.Aspire.ServiceDefaults.csproj" />
   </Folder>
-  <Folder Name="/Backend/" />
-  <Folder Name="/Backend/Common/" />
+  <Folder Name="/Backend/">
+    <File Path="Backend\Directory.Build.props" />
+    <File Path="Backend\README.md" />
+  </Folder>
+  <Folder Name="/Backend/Common/">
+    <Project Path="Backend/Common/src/Application/Portal.Common.Application.csproj" />
+    <Project Path="Backend/Common/src/Domain/Portal.Common.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Backend/Common/tests/">
+    <Project Path="Backend/Common/tests/Unit/Portal.Common.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/Frontend/">
     <File Path="Frontend\Directory.Build.props" />
     <File Path="Frontend\README.md" />
@@ -21,6 +30,13 @@
   <Folder Name="/Frontend/Federation/">
     <File Path="Frontend\Federation\Directory.Build.props" />
     <File Path="Frontend\Federation\README.md" />
+    <Project Path="Frontend/Federation/src/Application/Portal.Federation.Application.csproj" />
+    <Project Path="Frontend/Federation/src/Domain/Portal.Federation.Domain.csproj" />
+    <Project Path="Frontend/Federation/src/Infrastructure/Portal.Federation.Infrastructure.csproj" />
+    <Project Path="Frontend/Federation/src/Persistence/Portal.Federation.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/Frontend/Federation/tests/">
+    <Project Path="Frontend/Federation/tests/Unit/Portal.Federation.UnitTests.csproj" />
   </Folder>
   <Folder Name="/Frontend/Portal/">
     <File Path="Frontend\Portal\Directory.Build.props" />
@@ -31,5 +47,10 @@
     <Project Path="Frontend/Portal/src/Infrastructure/Portal.Blazor.Infrastructure.csproj" />
     <Project Path="Frontend/Portal/src/Persistence/Portal.Blazor.Persistence.csproj" />
     <Project Path="Frontend\Portal\src\Server\Portal.Blazor.Server.csproj" />
+  </Folder>
+  <Folder Name="/Frontend/Portal/tests/">
+    <Project Path="Frontend/Portal/tests/Functional/Portal.Blazor.FunctionalTests.csproj" />
+    <Project Path="Frontend/Portal/tests/Integration/Portal.Blazor.IntegrationTests.csproj" />
+    <Project Path="Frontend/Portal/tests/Unit/Portal.Blazor.UnitTests.csproj" />
   </Folder>
 </Solution>

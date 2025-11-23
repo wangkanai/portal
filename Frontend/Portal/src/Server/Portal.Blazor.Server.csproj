@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Federation\src\Persistence\Portal.Federation.Persistence.csproj" />
     <ProjectReference Include="..\Client\Portal.Blazor.Client.csproj" />
+    <ProjectReference Include="..\Persistence\Portal.Blazor.Persistence.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server"/>
@@ -17,6 +19,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"  />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

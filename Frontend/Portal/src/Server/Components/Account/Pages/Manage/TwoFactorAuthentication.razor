@@ -2,10 +2,10 @@
 
 @using Microsoft.AspNetCore.Http.Features
 @using Microsoft.AspNetCore.Identity
-@using Portal.Blazor.Server.Data
+@using Portal.Federation.Identity
 
-@inject UserManager<ApplicationUser> UserManager
-@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<FederationUser> UserManager
+@inject SignInManager<FederationUser> SignInManager
 @inject IdentityRedirectManager RedirectManager
 
 <PageTitle>Two-factor authentication (2FA)</PageTitle>
