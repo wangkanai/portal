@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
-using Portal.Blazor.Data;
 
-namespace Portal.Blazor.Components.Account;
+using Portal.Blazor.Server.Data;
+
+namespace Portal.Blazor.Server.Components.Account;
 
 internal sealed class IdentityRedirectManager(NavigationManager navigationManager)
 {

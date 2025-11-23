@@ -1,4 +1,4 @@
-namespace Portal.Blazor.Components.Account;
+namespace Portal.Blazor.Server.Components.Account;
 
 public enum PasskeyOperation
 {

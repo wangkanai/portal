@@ -30,6 +30,6 @@
     <Project Path="Frontend/Portal/src/Domain/Portal.Blazor.Domain.csproj" />
     <Project Path="Frontend/Portal/src/Infrastructure/Portal.Blazor.Infrastructure.csproj" />
     <Project Path="Frontend/Portal/src/Persistence/Portal.Blazor.Persistence.csproj" />
-    <Project Path="Frontend/Portal/src/Server/Portal.Blazor.csproj" />
+    <Project Path="Frontend\Portal\src\Server\Portal.Blazor.Server.csproj" />
   </Folder>
 </Solution>
