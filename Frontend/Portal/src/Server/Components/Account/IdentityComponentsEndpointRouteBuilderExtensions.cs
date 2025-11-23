@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using System.Text.Json;
+
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -8,11 +9,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 
-using Portal.Blazor.Domain.Identity;
 using Portal.Blazor.Components.Account.Pages;
 using Portal.Blazor.Components.Account.Pages.Manage;
+using Portal.Blazor.Domain.Identity;
 
-namespace Microsoft.AspNetCore.Routing;
+namespace Portal.Blazor.Components.Account;
 
 internal static class IdentityComponentsEndpointRouteBuilderExtensions
 {

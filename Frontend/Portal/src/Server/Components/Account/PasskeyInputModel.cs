@@ -1,4 +1,4 @@
-namespace Portal.Blazor.Server.Components.Account;
+namespace Portal.Blazor.Components.Account;
 
 public class PasskeyInputModel
 {

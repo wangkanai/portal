@@ -6,7 +6,6 @@ using Portal.Blazor.Domain.Identity;
 using Portal.Blazor.Persistence;
 using Portal.Blazor.Components;
 using Portal.Blazor.Components.Account;
-using Portal.Blazor.Server.Components.Account;
 
 var builder = WebApplication.CreateBuilder(args);
 
