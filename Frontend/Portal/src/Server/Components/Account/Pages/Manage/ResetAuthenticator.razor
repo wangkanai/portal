@@ -1,10 +1,11 @@
 ﻿@page "/Account/Manage/ResetAuthenticator"
 
 @using Microsoft.AspNetCore.Identity
-@using Portal.Blazor.Domain.Identity
 
-@inject UserManager<ApplicationUser> UserManager
-@inject SignInManager<ApplicationUser> SignInManager
+@using Portal.Federation.Identity
+
+@inject UserManager<FederationUser> UserManager
+@inject SignInManager<FederationUser> SignInManager
 @inject IdentityRedirectManager RedirectManager
 @inject ILogger<ResetAuthenticator> Logger
 

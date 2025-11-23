@@ -32,6 +32,8 @@
     <File Path="Frontend\Federation\README.md" />
     <Project Path="Frontend/Federation/src/Application/Portal.Federation.Application.csproj" />
     <Project Path="Frontend/Federation/src/Domain/Portal.Federation.Domain.csproj" />
+    <Project Path="Frontend/Federation/src/Infrastructure/Portal.Federation.Infrastructure.csproj" />
+    <Project Path="Frontend/Federation/src/Persistence/Portal.Federation.Persistence.csproj" />
   </Folder>
   <Folder Name="/Frontend/Federation/tests/">
     <Project Path="Frontend/Federation/tests/Unit/Portal.Federation.UnitTests.csproj" />

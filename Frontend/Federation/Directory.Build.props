@@ -1,7 +1,6 @@
 <Project>
    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory)..\, Directory.Build.props))\Directory.Build.props"/>
    <PropertyGroup>
-
-
+      <RootNamespace>Portal.Federation</RootNamespace>
   </PropertyGroup>
 </Project>
