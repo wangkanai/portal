@@ -41,4 +41,9 @@
     <Project Path="Frontend/Portal/src/Persistence/Portal.Blazor.Persistence.csproj" />
     <Project Path="Frontend\Portal\src\Server\Portal.Blazor.Server.csproj" />
   </Folder>
+  <Folder Name="/Frontend/Portal/tests/">
+    <Project Path="Frontend/Portal/tests/Functional/Portal.Blazor.FunctionalTests.csproj" />
+    <Project Path="Frontend/Portal/tests/Integration/Portal.Blazor.IntegrationTests.csproj" />
+    <Project Path="Frontend/Portal/tests/Unit/Portal.Blazor.UnitTests.csproj" />
+  </Folder>
 </Solution>
