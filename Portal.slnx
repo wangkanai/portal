@@ -14,7 +14,22 @@
   </Folder>
   <Folder Name="/Backend/" />
   <Folder Name="/Backend/Common/" />
-  <Folder Name="/Frontend/" />
-  <Folder Name="/Frontend/Federation/" />
-  <Folder Name="/Frontend/Portal/" />
+  <Folder Name="/Frontend/">
+    <File Path="Frontend\Directory.Build.props" />
+    <File Path="Frontend\README.md" />
+  </Folder>
+  <Folder Name="/Frontend/Federation/">
+    <File Path="Frontend\Federation\Directory.Build.props" />
+    <File Path="Frontend\Federation\README.md" />
+  </Folder>
+  <Folder Name="/Frontend/Portal/">
+    <File Path="Frontend\Portal\Directory.Build.props" />
+    <File Path="Frontend\Portal\README.md" />
+    <Project Path="Frontend/Portal/src/Application/Portal.Blazor.Application.csproj" />
+    <Project Path="Frontend/Portal/src/Client/Portal.Blazor.Client.csproj" />
+    <Project Path="Frontend/Portal/src/Domain/Portal.Blazor.Domain.csproj" />
+    <Project Path="Frontend/Portal/src/Infrastructure/Portal.Blazor.Infrastructure.csproj" />
+    <Project Path="Frontend/Portal/src/Persistence/Portal.Blazor.Persistence.csproj" />
+    <Project Path="Frontend/Portal/src/Server/Portal.Blazor.csproj" />
+  </Folder>
 </Solution>
