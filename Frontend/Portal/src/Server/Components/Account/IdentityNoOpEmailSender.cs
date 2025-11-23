@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
-using Portal.Blazor.Server.Data;
+using Portal.Blazor.Domain.Identity;
 
 namespace Portal.Blazor.Server.Components.Account;
 

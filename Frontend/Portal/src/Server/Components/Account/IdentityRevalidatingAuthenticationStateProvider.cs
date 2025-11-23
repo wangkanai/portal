@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-using Portal.Blazor.Server.Data;
+using Portal.Blazor.Domain.Identity;
 
 namespace Portal.Blazor.Server.Components.Account;
 

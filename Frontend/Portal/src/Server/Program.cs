@@ -2,9 +2,10 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portal.Blazor.Client.Pages;
+using Portal.Blazor.Domain.Identity;
+using Portal.Blazor.Persistence;
 using Portal.Blazor.Server.Components;
 using Portal.Blazor.Server.Components.Account;
-using Portal.Blazor.Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
