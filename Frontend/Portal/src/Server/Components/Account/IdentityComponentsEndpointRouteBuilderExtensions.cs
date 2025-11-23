@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 
 using Portal.Blazor.Domain.Identity;
-using Portal.Blazor.Server.Components.Account.Pages;
-using Portal.Blazor.Server.Components.Account.Pages.Manage;
+using Portal.Blazor.Components.Account.Pages;
+using Portal.Blazor.Components.Account.Pages.Manage;
 
 namespace Microsoft.AspNetCore.Routing;
 

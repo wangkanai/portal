@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Portal.Blazor.Client.Pages;
+using Portal.Blazor.Pages;
 using Portal.Blazor.Domain.Identity;
 using Portal.Blazor.Persistence;
-using Portal.Blazor.Server.Components;
+using Portal.Blazor.Components;
+using Portal.Blazor.Components.Account;
 using Portal.Blazor.Server.Components.Account;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,7 +66,7 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Portal.Blazor.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Portal.Blazor._Imports).Assembly);
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
