@@ -21,7 +21,7 @@
     <Project Path="Backend/Common/src/Domain/Portal.Common.Domain.csproj" />
   </Folder>
   <Folder Name="/Backend/Common/tests/">
-    <Project Path="Backend\Common\tests\Unit\Portal.Common.UnitTests.csproj" />
+    <Project Path="Backend/Common/tests/Unit/Portal.Common.UnitTests.csproj" />
   </Folder>
   <Folder Name="/Frontend/">
     <File Path="Frontend\Directory.Build.props" />
