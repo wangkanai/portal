@@ -14,8 +14,12 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
-    
+    runs-on: [self-hosted, ubuntu]
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -75,7 +79,7 @@ jobs:
         retention-days: 7
 
   security-scan:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu]
     needs: build-and-test
     
     steps:
@@ -88,7 +92,7 @@ jobs:
         categories: 'IaC,secrets'
         
   docker-build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu]
     needs: build-and-test
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     
