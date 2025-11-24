@@ -7,6 +7,16 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "build:css": "sass wwwroot/scss:wwwroot/css",
+    "watch:css": "sass --watch wwwroot/scss:wwwroot/css",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "sass": "^1.94.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "npm": "^11.6.3",
+    "node": ">=20.0.0"
   }
 }

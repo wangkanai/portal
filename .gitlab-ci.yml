@@ -1,0 +1,180 @@
+# Copyright (c) 2014-2025 Sarin Na Wangkanai, All Rights Reserved.
+
+# GitLab CI/CD Pipeline for Portal Template
+# Requires GitLab Community Edition or higher
+
+variables:
+  DOTNET_VERSION: "10.0"
+  NODE_VERSION: "20"
+  NPM_VERSION: "11.6.3"
+  ASPIRE_VERSION: "13.0"
+  POSTGRES_DB: "portal_test"
+  POSTGRES_USER: "portal"
+  POSTGRES_PASSWORD: "portal_test_password"
+  REDIS_VERSION: "latest"
+
+stages:
+  - build
+  - test
+  - security
+  - deploy
+
+default:
+  image: mcr.microsoft.com/dotnet/sdk:10.0
+  before_script:
+    - dotnet --version
+    - echo "Starting CI/CD Pipeline"
+
+# Install dependencies
+.install-dependencies:
+  before_script:
+    - apt-get update -qq
+    - apt-get install -qq -y curl
+    - curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash -
+    - apt-get install -qq -y nodejs
+    - npm install -g npm@${NPM_VERSION}
+    - dotnet --version
+    - node --version
+    - npm --version
+
+# Build stage
+build:
+  stage: build
+  extends: .install-dependencies
+  script:
+    - echo "Restoring .NET dependencies..."
+    - dotnet restore Portal.slnx
+    - echo "Installing npm dependencies..."
+    - cd Frontend/Portal/src/Server
+    - npm install
+    - npm run build:css
+    - cd ../../../..
+    - echo "Building solution..."
+    - dotnet build Portal.slnx --no-restore --configuration Release
+  artifacts:
+    paths:
+      - "**/bin/Release/**"
+      - "**/obj/**"
+    exclude:
+      - "**/obj/**/*.cs"
+    expire_in: 1 day
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .nuget/
+      - Frontend/Portal/src/Server/node_modules/
+
+# Unit tests
+test:unit:
+  stage: test
+  extends: .install-dependencies
+  dependencies:
+    - build
+  script:
+    - echo "Running unit tests..."
+    - dotnet test Portal.slnx --no-build --configuration Release --filter "FullyQualifiedName~UnitTests" --logger "trx;LogFileName=unit-test-results.trx" --logger "console;verbosity=detailed"
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - "**/unit-test-results.trx"
+    paths:
+      - "**/TestResults/**"
+    expire_in: 7 days
+  coverage: '/Total\s+\|\s+(\d+\.?\d*)%/'
+
+# Integration tests with services
+test:integration:
+  stage: test
+  extends: .install-dependencies
+  services:
+    - name: postgres:16
+      alias: postgres
+    - name: redis:latest
+      alias: redis
+  variables:
+    POSTGRES_HOST_AUTH_METHOD: "trust"
+    ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+    Redis__Configuration: "redis:6379"
+  dependencies:
+    - build
+  script:
+    - echo "Running integration tests..."
+    - dotnet test Portal.slnx --no-build --configuration Release --filter "FullyQualifiedName~IntegrationTests" --logger "trx;LogFileName=integration-test-results.trx" --logger "console;verbosity=detailed"
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - "**/integration-test-results.trx"
+    paths:
+      - "**/TestResults/**"
+    expire_in: 7 days
+  allow_failure: false
+
+# Functional tests
+test:functional:
+  stage: test
+  extends: .install-dependencies
+  services:
+    - name: postgres:16
+      alias: postgres
+    - name: redis:latest
+      alias: redis
+  variables:
+    POSTGRES_HOST_AUTH_METHOD: "trust"
+    ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+    Redis__Configuration: "redis:6379"
+  dependencies:
+    - build
+  script:
+    - echo "Running functional tests..."
+    - dotnet test Portal.slnx --no-build --configuration Release --filter "FullyQualifiedName~FunctionalTests" --logger "trx;LogFileName=functional-test-results.trx" --logger "console;verbosity=detailed"
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - "**/functional-test-results.trx"
+    paths:
+      - "**/TestResults/**"
+    expire_in: 7 days
+  allow_failure: false
+
+# Security scanning
+security:sast:
+  stage: security
+  script:
+    - echo "Running SAST security scan..."
+    - dotnet list package --vulnerable --include-transitive
+  allow_failure: true
+  only:
+    - main
+    - develop
+    - merge_requests
+
+# Deploy to staging (manual trigger)
+deploy:staging:
+  stage: deploy
+  script:
+    - echo "Deploying to staging environment..."
+    - echo "Aspire AppHost deployment would go here"
+    # Add your deployment scripts here
+  environment:
+    name: staging
+    url: https://staging.portal.example.com
+  when: manual
+  only:
+    - develop
+
+# Deploy to production (manual trigger)
+deploy:production:
+  stage: deploy
+  script:
+    - echo "Deploying to production environment..."
+    - echo "Aspire AppHost deployment would go here"
+    # Add your deployment scripts here
+  environment:
+    name: production
+    url: https://portal.example.com
+  when: manual
+  only:
+    - main
