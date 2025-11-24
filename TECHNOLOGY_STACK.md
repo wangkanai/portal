@@ -95,7 +95,7 @@ This document outlines the complete technology stack used in the Portal Template
   - `xunit.v3`, `xunit.analyzers`, `xunit.runner.visualstudio`
 
 ### Blazor Testing
-- **bUnit**: 1.34.10
+- **bUnit**: 1.35.3
   - Blazor component testing
   - `bUnit.web` for web components
   - Integration with xUnit
@@ -113,7 +113,7 @@ This document outlines the complete technology stack used in the Portal Template
   - `Microsoft.NET.Test.Sdk`
 
 ### Container Testing
-- **Testcontainers**: 3.11.0
+- **Testcontainers**: 4.0.0
   - Docker-based integration testing
   - `Testcontainers.MsSql`: SQL Server containers
   - `Testcontainers.PostgreSql`: PostgreSQL containers
@@ -201,9 +201,9 @@ This document outlines the complete technology stack used in the Portal Template
 | TypeScript | ^5.9 | ✅ Configured |
 | Aspire | 13.0 | ✅ Configured |
 | xUnit v3 | 3.2.0 | ✅ Configured |
-| bUnit | 1.34.10 | ✅ Configured |
+| bUnit | 1.35.3 | ✅ Configured |
 | Fluent Assertions | 7.0.0 | ✅ Configured |
-| Testcontainers | 3.11.0 | ✅ Configured |
+| Testcontainers | 4.0.0 | ✅ Configured |
 | Microsoft Testing Platform | 18.0.1 | ✅ Configured |
 | Windows Authentication | 10.0 | ✅ Configured |
 | ThaiID Authentication | - | 🔄 To be implemented |
