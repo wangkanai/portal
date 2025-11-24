@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Portal.Federation.Application.csproj" />
+    <ProjectReference Include="..\Application\Portal.Federation.Application.csproj"/>
   </ItemGroup>
 
 </Project>
