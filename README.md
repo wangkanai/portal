@@ -45,7 +45,7 @@ dotnet test Portal.slnx
 ## CI/CD
 
 The project includes CI/CD pipelines for:
-- **GitHub Actions**: `.github/workflows/ci-cd.yml`
+- **GitHub Actions**: `.github/workflows/dotnet.yml`
 - **GitLab CI**: `.gitlab-ci.yml`
 
 ## License

@@ -127,7 +127,7 @@ This document outlines the complete technology stack used in the Portal Template
 - Security scanning
 - Artifact publishing
 - Docker image building
-- Configuration: `.github/workflows/ci-cd.yml`
+- Configuration: `.github/workflows/dotnet.yml`
 
 ### GitLab Community
 - Full CI/CD pipeline
