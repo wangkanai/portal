@@ -4,7 +4,4 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Portal.Federation.Identity;
 
-public class FederationRole : IdentityRole<int>
-{
-
-}
+public class FederationRole : IdentityRole<int> { }
