@@ -12,6 +12,7 @@ public static class IdentitySeed
 
    public static List<FederationRole> Roles =>
    [
-      new() { Name = "Admin" }
+      new() { Name = "Admin" },
+      new() { Name = "User" }
    ];
 }
