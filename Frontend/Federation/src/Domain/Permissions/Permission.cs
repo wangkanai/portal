@@ -6,9 +6,9 @@ namespace Portal.Federation.Permissions;
 public enum Permission
 {
    None   = 0,
-   View   = 1 << 0,
-   Create = 1 << 1,
-   Update,
-   Delete,
-   All = View | Create | Update | Delete
+   View   = 1 << 0, // 0001
+   Create = 1 << 1, // 0010
+   Update = 1 << 2, // 0100
+   Delete = 1 << 3, // 1000
+   All    = View | Create | Update | Delete
 }
