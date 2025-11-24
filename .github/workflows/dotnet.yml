@@ -14,7 +14,7 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: [self-hosted, ubuntu]
+    runs-on: [self-hosted, Linux, X64]
     permissions:
       contents: read
       checks: write
@@ -79,7 +79,7 @@ jobs:
         retention-days: 7
 
   security-scan:
-    runs-on: [self-hosted, ubuntu]
+    runs-on: [self-hosted, Linux, X64]
     needs: build-and-test
     
     steps:
@@ -92,7 +92,7 @@ jobs:
         categories: 'IaC,secrets'
         
   docker-build:
-    runs-on: [self-hosted, ubuntu]
+    runs-on: [self-hosted, Linux, X64]
     needs: build-and-test
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     
