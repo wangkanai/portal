@@ -1,0 +1,96 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '10.0.x'
+  NODE_VERSION: '20.x'
+  NPM_VERSION: '11.6.3'
+
+jobs:
+  build-and-test:
+    runs-on: [self-hosted, Linux, X64]
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Display versions
+      run: |
+        dotnet --version
+        node --version
+        npm --version
+        
+    - name: Restore .NET dependencies
+      run: dotnet restore Portal.slnx
+      
+    - name: Install npm dependencies
+      working-directory: Frontend/Portal/src/Server
+      run: npm install
+      
+    - name: Build SCSS
+      working-directory: Frontend/Portal/src/Server
+      run: npm run build:css
+      
+    - name: Build solution
+      run: dotnet build Portal.slnx --no-restore --configuration Release
+      
+    - name: Run tests
+      run: dotnet test Portal.slnx --no-build --configuration Release --verbosity normal --logger "trx;LogFileName=test-results.trx"
+      
+    - name: Publish test results
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: .NET Tests
+        path: '**/test-results.trx'
+        reporter: dotnet-trx
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: build-artifacts
+        path: |
+          **/bin/Release/**
+          !**/obj/**
+        retention-days: 7
+
+  security-scan:
+    runs-on: [self-hosted, Linux, X64]
+    needs: build-and-test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run security scan
+      uses: microsoft/security-devops-action@v1
+      with:
+        categories: 'IaC,secrets'
+        
+  docker-build:
+    runs-on: [self-hosted, Linux, X64]
+    needs: build-and-test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build Docker image
+      run: |
+        docker build -t portal:${{ github.sha }} .
+      if: false  # Enable when Dockerfile is added

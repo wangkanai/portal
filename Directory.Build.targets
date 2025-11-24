@@ -11,15 +11,22 @@
    </ItemGroup>
    <ItemGroup Condition="$(MSBuildProjectName.Contains('Tests'))">
       <Using Include="Xunit"/>
+      <Using Include="FluentAssertions"/>
    </ItemGroup>
    <ItemGroup Condition="$(MSBuildProjectName.Contains('Tests'))">
       <Content Update="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('xunit.runner.json')"/>
    </ItemGroup>
    <ItemGroup Condition="$(MSBuildProjectName.Contains('Tests'))">
+      <PackageReference Include="FluentAssertions"/>
       <PackageReference Include="Microsoft.AspNetCore.TestHost"/>
       <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+      <PackageReference Include="Testcontainers"/>
       <PackageReference Include="xunit.v3"/>
       <PackageReference Include="xunit.analyzers" PrivateAssets="all"/>
       <PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all"/>
+   </ItemGroup>
+   <ItemGroup Condition="$(MSBuildProjectName.Contains('UnitTests')) AND $(MSBuildProjectName.Contains('Blazor'))">
+      <PackageReference Include="bUnit"/>
+      <PackageReference Include="bUnit.web"/>
    </ItemGroup>
 </Project>
