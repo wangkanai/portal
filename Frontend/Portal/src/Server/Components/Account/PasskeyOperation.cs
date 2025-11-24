@@ -2,6 +2,6 @@ namespace Portal.Blazor.Components.Account;
 
 public enum PasskeyOperation
 {
-    Create = 0,
-    Request = 1,
+   Create  = 0,
+   Request = 1
 }

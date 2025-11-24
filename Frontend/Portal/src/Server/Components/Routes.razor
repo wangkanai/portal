@@ -1,11 +1,12 @@
-﻿<Router AppAssembly="typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(_Imports).Assembly }" NotFoundPage="typeof(Pages.NotFound)">
-    <Found Context="routeData">
-        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+﻿@using Portal.Blazor.Components.Pages
+<Router AppAssembly="typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(_Imports).Assembly }" NotFoundPage="typeof(NotFound)">
+   <Found Context="routeData">
+      <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)">
 
-            <NotAuthorized>
-                <RedirectToLogin />
-            </NotAuthorized>
-        </AuthorizeRouteView>
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
-    </Found>
+         <NotAuthorized>
+            <RedirectToLogin/>
+         </NotAuthorized>
+      </AuthorizeRouteView>
+      <FocusOnNavigate RouteData="routeData" Selector="h1"/>
+   </Found>
 </Router>

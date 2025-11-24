@@ -5,6 +5,5 @@ using Portal.Federation.Identity;
 
 namespace Portal.Federation;
 
-public class FederationDbContext(DbContextOptions<FederationDbContext> options) : IdentityDbContext<FederationUser>(options)
-{
-}
+public class FederationDbContext(DbContextOptions<FederationDbContext> options)
+   : IdentityDbContext<FederationUser, FederationRole, int>(options) { }

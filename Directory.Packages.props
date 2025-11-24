@@ -1,48 +1,48 @@
 <Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-  </PropertyGroup>
-  <ItemGroup>
-    <!--sourcelink-->
-    <PackageVersion Include="Microsoft.Extensions.Identity.Stores" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <!--extensions-->
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
-    <!--aspire-->
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
-    <!--efcore-->
-    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0" />
-    <!--blazor-->
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.0" />
-    <!--caching-->
-    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0" />
-    <PackageVersion Include="StackExchange.Redis" Version="2.8.16" />
-    <!--authentication-->
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="10.0.0" />
-    <!--testing-->
-    <PackageVersion Include="bUnit" Version="1.35.3" />
-    <PackageVersion Include="bUnit.web" Version="1.35.3" />
-    <PackageVersion Include="FluentAssertions" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageVersion Include="Testcontainers" Version="4.0.0" />
-    <PackageVersion Include="Testcontainers.MsSql" Version="4.0.0" />
-    <PackageVersion Include="Testcontainers.PostgreSql" Version="4.0.0" />
-    <PackageVersion Include="Testcontainers.Redis" Version="4.0.0" />
-    <PackageVersion Include="xunit.v3" Version="3.2.0" />
-    <PackageVersion Include="xunit.analyzers" Version="1.25.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
-  </ItemGroup>
+   <PropertyGroup>
+      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+   </PropertyGroup>
+   <ItemGroup>
+      <!--sourcelink-->
+      <PackageVersion Include="Microsoft.Extensions.Identity.Stores" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0"/>
+      <!--extensions-->
+      <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0"/>
+      <!--aspire-->
+      <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0"/>
+      <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0"/>
+      <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0"/>
+      <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0"/>
+      <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0"/>
+      <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0"/>
+      <!--efcore-->
+      <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0"/>
+      <!--blazor-->
+      <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.0"/>
+      <!--caching-->
+      <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0"/>
+      <PackageVersion Include="StackExchange.Redis" Version="2.8.16"/>
+      <!--authentication-->
+      <PackageVersion Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="10.0.0"/>
+      <!--testing-->
+      <PackageVersion Include="bUnit" Version="1.35.3"/>
+      <PackageVersion Include="bUnit.web" Version="1.35.3"/>
+      <PackageVersion Include="FluentAssertions" Version="7.0.0"/>
+      <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.0"/>
+      <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1"/>
+      <PackageVersion Include="Testcontainers" Version="4.0.0"/>
+      <PackageVersion Include="Testcontainers.MsSql" Version="4.0.0"/>
+      <PackageVersion Include="Testcontainers.PostgreSql" Version="4.0.0"/>
+      <PackageVersion Include="Testcontainers.Redis" Version="4.0.0"/>
+      <PackageVersion Include="xunit.v3" Version="3.2.0"/>
+      <PackageVersion Include="xunit.analyzers" Version="1.25.0"/>
+      <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5"/>
+   </ItemGroup>
 </Project>

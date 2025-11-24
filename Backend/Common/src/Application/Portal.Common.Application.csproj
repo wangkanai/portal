@@ -2,6 +2,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Portal.Common.Domain.csproj" />
+    <ProjectReference Include="..\Domain\Portal.Common.Domain.csproj"/>
   </ItemGroup>
 </Project>

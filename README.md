@@ -1,4 +1,4 @@
-# Portal
+# portal
 
 Portal template with Vertical Slice Architecture using .NET, Blazor, Microservices, Aspire
 
@@ -51,4 +51,3 @@ The project includes CI/CD pipelines for:
 ## License
 
 Copyright (c) 2014-2025 Sarin Na Wangkanai, All Rights Reserved.
-
